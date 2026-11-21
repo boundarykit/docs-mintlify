@@ -1,41 +1,33 @@
 ---
-title: "BoundaryKit overview"
+title: BoundaryKit
+description: Decide which tools an agent may call, enforce the decision at dispatch,
+  and trace it to a policy revision.
 ---
 
-Use boundarykit overview in a scoped workspace and verify the result with boundaries records.
+<header className="bk-hero"><span className="bk-release">BoundaryKit / v2</span><h2>Decide what your agents can do.</h2><p>Enforce tool permissions at dispatch and trace each decision to the policy revision that authorized it.</p></header>
 
-## Workspace context
+<CardGroup cols={3}>
+<Card title="Quickstart" href="/quickstart" img="/assets/images/cards/card-quickstart.svg" />
+<Card title="Policies" href="/documentation/core-concepts" img="/assets/images/cards/card-policies.svg" />
+<Card title="API" href="/api-reference" img="/assets/images/cards/card-api.svg" />
+<Card title="MCP" href="/mcp" img="/assets/images/cards/card-mcp.svg" />
+<Card title="Bac" href="/bac" img="/assets/images/cards/card-bac.svg" />
+<Card title="Security" href="/administration/security-compliance" img="/assets/images/cards/card-security.svg" />
+</CardGroup>
 
-Use boundarykit overview in a scoped workspace and verify the result with boundaries records. Select a workspace with representative test data and record the active revision before you start. A response from a different workspace can look valid even when it contains none of the expected records.
+Decide which tools an agent may call, enforce the decision at dispatch, and trace it to a policy revision.
 
-Resolve the calling identity, its workspace, and the policy revision before tracing a request. Keep these values together when comparing results from two environments.
 
-![BoundaryKit request flow](assets/images/diagrams/flow-01.svg)
 
-## Read the baseline
+<CodeGroup>
 
-Request the first page of boundaries using the v2 endpoint. Supply the organization explicitly on every request. Load the key from your shell environment and keep the expanded command out of build logs.
-
-```bash
-curl --fail-with-body "https://api.boundarykit.com/v2/boundaries" -H "X-API-Key: $BKIT_KEY" -H "X-Organization-Id: $BKIT_ORG"
+```bash curl
+curl https://api.boundarykit.com/v2/policies -H "X-API-Key: $BKIT_KEY" -H "X-Organization-Id: $BKIT_ORG"
 ```
 
-Compare the returned identifiers with the records you expect to see in this workspace. An empty result is a successful read. Verify the workspace selection before creating a replacement record or changing a policy.
+```python Python
+import os, requests
+requests.get("https://api.boundarykit.com/v2/policies", headers={"X-API-Key": os.environ["BKIT_KEY"], "X-Organization-Id": os.environ["BKIT_ORG"]}).raise_for_status()
+```
 
-## Verify the result
-
-Repeat the read with a credential scoped to a separate test organization. Check the response status before processing the body. Preserve the workspace identifier and response time alongside the revision so another operator can reproduce the observation.
-
-| Response | Operator action |
-| --- | --- |
-| 200 | Inspect the returned boundaries records. |
-| 403 | Verify the organization and identity scope. |
-| 503 | Retry the read after a bounded delay. |
-
-> Keep credentials out of the evidence bundle. Store a request identifier and a redacted response instead.
-
-For a walkthrough of the service boundary, see [Runtime architecture](architecture#workspace-context).
-
-## Acceptance check
-
-Record the acceptance criteria for boundarykit overview in the workspace change log. Run the check with a known input and save the observed result beside the configuration revision. Repeat after promotion using the same input and compare both records.
+</CodeGroup>

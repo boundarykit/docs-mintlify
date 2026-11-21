@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "BoundaryKit",
   "colors": {
-    "primary": "#0F52BA",
-    "light": "#38BDF8",
-    "dark": "#0A3D8F"
+    "primary": "#194FD6",
+    "light": "#4BE2FA",
+    "dark": "#194FD6"
   },
   "logo": {
     "light": "/assets/logo/logo-light.svg",
@@ -27,7 +27,9 @@
                   "quickstart",
                   "architecture",
                   "glossary",
-                  "changelog"
+                  "changelog",
+                  "mcp",
+                  "bac"
                 ]
               },
               {
@@ -42,7 +44,10 @@
                   "documentation/migrate-from-v1-to-v2",
                   "documentation/security-model",
                   "documentation/session-lifecycle",
-                  "documentation/token-scopes"
+                  "documentation/token-scopes",
+                  "documentation/troubleshooting",
+                  "documentation/policy-expression-reference",
+                  "documentation/audit-event-catalog"
                 ]
               },
               {
@@ -78,7 +83,8 @@
                   "cookbook/test-nested-rules",
                   "cookbook/trace-a-webhook",
                   "cookbook/inspect-usage-spikes",
-                  "cookbook/stage-a-policy-rollout"
+                  "cookbook/stage-a-policy-rollout",
+                  "cookbook/BoundaryQL-Reference"
                 ]
               },
               {
@@ -110,7 +116,8 @@
                   "administration/billing",
                   "administration/service-accounts",
                   "administration/membership-reviews",
-                  "administration/organization-settings"
+                  "administration/organization-settings",
+                  "administration/security-compliance"
                 ]
               },
               {
@@ -593,7 +600,8 @@
               {
                 "group": "Start here",
                 "pages": [
-                  "start/cicd"
+                  "start/cicd",
+                  "api-reference"
                 ]
               }
             ]
@@ -1423,5 +1431,75 @@
       "source": "/reference-guide/architecture",
       "destination": "/architecture"
     }
-  ]
+  ],
+  "background": {
+    "color": {
+      "dark": "#090D16",
+      "light": "#F8FAFC"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Space Grotesk"
+    },
+    "body": {
+      "family": "Inter"
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Release notes",
+        "href": "/changelog"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Quickstart",
+      "href": "/quickstart"
+    }
+  },
+  "footer": {
+    "links": [
+      {
+        "header": "Build",
+        "items": [
+          {
+            "label": "Quickstart",
+            "href": "/quickstart"
+          },
+          {
+            "label": "Policies",
+            "href": "/documentation/core-concepts"
+          }
+        ]
+      },
+      {
+        "header": "Connect",
+        "items": [
+          {
+            "label": "API",
+            "href": "/api-reference"
+          },
+          {
+            "label": "MCP",
+            "href": "/mcp"
+          }
+        ]
+      },
+      {
+        "header": "Operate",
+        "items": [
+          {
+            "label": "Bac",
+            "href": "/bac"
+          },
+          {
+            "label": "Security",
+            "href": "/administration/security-compliance"
+          }
+        ]
+      }
+    ]
+  }
 }

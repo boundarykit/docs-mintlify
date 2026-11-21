@@ -1,0 +1,9 @@
+
+:root { --bk-ink:#090D16; --bk-cobalt:#194FD6; --bk-cyan:#4BE2FA; --bk-amber:#FFBB47; }
+.bk-hero { background:linear-gradient(115deg,#090D16 35%,#123575); color:#F8FAFC; padding:clamp(2rem,7vw,5rem); border-left:6px solid var(--bk-cyan); border-radius:14px; }
+.bk-hero h2 { font:700 clamp(2rem,5vw,4.5rem)/1.02 "Space Grotesk",sans-serif; color:inherit; letter-spacing:-.045em; }
+.bk-hero p { max-width:50ch; }
+.bk-release { color:var(--bk-amber); font-weight:700; }
+.bk-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(195px,1fr)); gap:1rem; }
+.bk-cards a { background:#111C32; color:white; border-radius:12px; overflow:hidden; padding-bottom:1rem; text-indent:1rem; }
+.bk-cards img { width:100%; display:block; margin-bottom:.75rem; }
