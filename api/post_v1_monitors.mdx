@@ -1,0 +1,19 @@
+---
+title: "Create monitor"
+---
+
+`POST /v1/monitors`
+
+## Parameters
+
+<ParamField header="X-Organization-Id" type="string">Required.</ParamField>
+
+## Responses
+
+<ResponseField name="200" type="status">Request completed.</ResponseField>
+
+<ResponseField name="202" type="status">Queued for processing.</ResponseField>
+
+<ResponseField name="403" type="status">Scope denied</ResponseField>
+
+<ResponseField name="503" type="status">Service unavailable</ResponseField>

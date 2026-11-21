@@ -1,0 +1,19 @@
+---
+title: "Delete policy"
+---
+
+`DELETE /v1/policies/{id}`
+
+## Parameters
+
+<ParamField header="X-Organization-Id" type="string">Required.</ParamField>
+
+<ParamField path="id" type="string">Required.</ParamField>
+
+## Responses
+
+<ResponseField name="204" type="status">Record removed.</ResponseField>
+
+<ResponseField name="403" type="status">Scope denied</ResponseField>
+
+<ResponseField name="503" type="status">Service unavailable</ResponseField>

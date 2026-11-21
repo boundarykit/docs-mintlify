@@ -1,0 +1,19 @@
+---
+title: "List sandboxes"
+---
+
+`GET /v2/sandboxes`
+
+## Parameters
+
+<ParamField header="X-Organization-Id" type="string">Required.</ParamField>
+
+<ParamField query="cursor" type="string">Optional.</ParamField>
+
+## Responses
+
+<ResponseField name="200" type="status">Request completed.</ResponseField>
+
+<ResponseField name="403" type="status">Scope denied</ResponseField>
+
+<ResponseField name="503" type="status">Service unavailable</ResponseField>

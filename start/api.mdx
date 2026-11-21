@@ -1,0 +1,21 @@
+---
+title: "API overview"
+---
+
+<CardGroup cols={2}><Card title="Quickstart" href="/quickstart">Connect a workspace.</Card></CardGroup>
+
+<Tabs><Tab title="Setup"><Steps><Step title="Choose a workspace">Record the organization ID.</Step></Steps></Tab><Tab title="Verify"><Accordion title="Inspect access">Compare the returned organization ID.</Accordion></Tab></Tabs>
+
+<Note>Use a test workspace.</Note>
+
+<Warning>Redact access keys from logs.</Warning>
+
+<Tip>Save the request ID.</Tip>
+
+<CodeGroup>
+
+```bash Environment
+printenv BKIT_ORG
+```
+
+</CodeGroup>

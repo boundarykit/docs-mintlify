@@ -1,0 +1,19 @@
+---
+title: "Get organization"
+---
+
+`GET /v1/organizations/{id}`
+
+## Parameters
+
+<ParamField header="X-Organization-Id" type="string">Required.</ParamField>
+
+<ParamField path="id" type="string">Required.</ParamField>
+
+## Responses
+
+<ResponseField name="200" type="status">Request completed.</ResponseField>
+
+<ResponseField name="403" type="status">Scope denied</ResponseField>
+
+<ResponseField name="503" type="status">Service unavailable</ResponseField>
